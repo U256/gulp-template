@@ -6,7 +6,7 @@ const srcFolder = './src'
 
 const pathList = {
    build: {
-      js: `${buildFolder}/js/`,
+      js: `${buildFolder}/script/`,
       img: `${buildFolder}/img/`,
       css: `${buildFolder}/css/`,
       html: `${buildFolder}/`,
@@ -14,7 +14,7 @@ const pathList = {
       fonts: `${buildFolder}/fonts/`,
    },
    src: {
-      js: `${srcFolder}/js/app.js`,
+      js: `${srcFolder}/script/app.{ts,js}`,
       img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
       svg: `${srcFolder}/svg/**/*.svg`,
       scss: `${srcFolder}/scss/style.scss`,
