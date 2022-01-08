@@ -1,10 +1,10 @@
 # gulp-template
 
 ### initialize project:
-`npm i`
+> `npm i`
 
 ### run in development mode:
-`npm run dev`
+> `npm run dev`
 
 ### run production package:
-`npm run build`
+> `npm run build`
