@@ -14,7 +14,7 @@ const pathList = {
       fonts: `${buildFolder}/fonts/`,
    },
    src: {
-      js: `${srcFolder}/script/app.{ts,js}`,
+      script: `${srcFolder}/script/app.ts`,
       img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
       svg: `${srcFolder}/svg/**/*.svg`,
       scss: `${srcFolder}/scss/style.scss`,
@@ -23,7 +23,7 @@ const pathList = {
       fonts: `${srcFolder}/fonts/**/*.{woff,woff2}`,
    },
    watch: {
-      js: `${srcFolder}/js/**/*.js`,
+      js: `${srcFolder}/sctipt/**/*.js`, // решить, как следить
       img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,svg,webp,ico}`,
       svg: `${srcFolder}/svg/**/*.svg`,
       scss: `${srcFolder}/scss/**/*.scss`,
