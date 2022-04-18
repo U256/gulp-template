@@ -4,3 +4,6 @@
 *.scss.map
 
 css
+node_modules
+prod
+.idea
