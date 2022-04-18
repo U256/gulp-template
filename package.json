@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "gulp",
-	 "build": "gulp --build",
+    "build": "gulp --build",
     "makeSprites": "gulp makeSprites"
   },
   "repository": {
