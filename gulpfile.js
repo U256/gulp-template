@@ -19,17 +19,19 @@ global.app = {
 	plugins 
 }
 
+const { watch, series, parallel, task } = gulp
+
 function watchChanges() {
-   gulp.watch(pathList.watch.files, copyFiles);
-   gulp.watch(pathList.watch.html, transformHTML)
-   gulp.watch(pathList.watch.scss, transformScss)
-   gulp.watch(pathList.watch.js, transformJS)
-   gulp.watch(pathList.watch.img, transformImg)
+   watch(pathList.watch.files, copyFiles);
+   watch(pathList.watch.html, transformHTML)
+   watch(pathList.watch.scss, transformScss)
+   watch(pathList.watch.js, transformJS)
+   watch(pathList.watch.img, transformImg)
 }
 
-const mainTasks = gulp.series(
+const mainTasks = series(
 	copyFonts,
-	gulp.parallel(
+	parallel(
 		copyFiles,
 		transformHTML,
 		transformScss,
@@ -37,8 +39,8 @@ const mainTasks = gulp.series(
 		transformImg,
 	)
 )
-const dev = gulp.series(reset, mainTasks, gulp.parallel(watchChanges, broadcast))
-const build = gulp.series(reset, mainTasks)
-gulp.task('default', dev)
+const dev = series(reset, mainTasks, parallel(watchChanges, broadcast))
+const build = series(reset, mainTasks)
+task('default', dev)
 
 export { makeSprites, dev, build }
