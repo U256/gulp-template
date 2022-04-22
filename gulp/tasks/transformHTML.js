@@ -17,14 +17,14 @@ const transformHTML = () => {
             )
          )
          .pipe(fileInclude())
-         .pipe(plugins.replace(/@img\//g, 'img/'))
+         .pipe(plugins.replace(new RegExp('(\.\.\/)+img/'), 'img/'))
 			.pipe(plugins.if(isBuild, webpHtml()))
          .pipe(plugins.if(
 				isBuild,
 				versionNumber({
 					value: '%DT%',
 					append: {
-						key: '_v', 
+						key: '_v',
 						cover: 0,
 						to: ['css', 'js'],
 					},

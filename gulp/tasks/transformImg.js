@@ -13,7 +13,7 @@ const transformImg = () => {
 				message: 'Error: <%= error.message %>',
 			}))
 		)
-      .pipe(plugins.newer(path.build.img))
+     .pipe(plugins.newer(path.build.img))
 	  .pipe(plugins.if(isBuild, webp()))
 	  .pipe(plugins.if(isBuild, gulp.dest(path.build.img)))
 	  .pipe(plugins.if(isBuild, gulp.src(path.src.img)))
@@ -27,12 +27,12 @@ const transformImg = () => {
 			  optimizationLevel: 3,
 		  })
 	  ))
-      .pipe(gulp.dest(path.build.img))
-      // просто перемещаем svg в папку изображений
-	  .pipe(gulp.src(path.src.svg))
-      .pipe(gulp.dest(path.build.img))
-		///
-      .pipe(plugins.browserSync.stream())
+     .pipe(gulp.dest(path.build.img))
+
+     .pipe(gulp.src(path.src.svg))
+     .pipe(gulp.dest(path.build.svgOriginal))
+
+     .pipe(plugins.browserSync.stream())
 }
 
 export default transformImg

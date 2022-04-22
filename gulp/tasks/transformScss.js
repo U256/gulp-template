@@ -21,7 +21,7 @@ const transformScss = () => {
             })
          )
       )
-      .pipe(plugins.replace(/@img\//g, '../img/'))
+      .pipe(plugins.replace(new RegExp('(\.\.\/)+img/'), 'img/'))
       .pipe(
          sass({
             outputStyle: 'expanded',
