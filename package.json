@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp --build",
-    "makeSprites": "gulp makeSprites",
+    "make-sprites": "gulp makeSprites",
     "lint": "gulp lint"
   },
   "repository": {

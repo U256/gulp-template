@@ -26,7 +26,6 @@ const pathList = {
    watch: {
       js: `${srcFolder}/js/**/*.js`,
       img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,svg,webp,ico}`,
-      svg: `${srcFolder}/svg/**/*.svg`,
       scss: `${srcFolder}/scss/**/*.scss`,
       html: `${srcFolder}/**/*.html`,
       files: `${srcFolder}/files/**/*.*`,

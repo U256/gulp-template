@@ -23,6 +23,10 @@ import svgSprite from 'gulp-svg-sprite'
 const  generateSvgSprites = () => {
 	const { gulp, plugins, path } = app
 
+   gulp
+      .src(path.src.svg)
+      .pipe(gulp.dest(path.build.svgOriginal))
+
 	return gulp
       .src(path.src.svg)
       .pipe(plugins.plumber(
@@ -32,9 +36,12 @@ const  generateSvgSprites = () => {
 			})
 		))
       .pipe(svgSprite({
+         log: 'info',
 			mode: {
-				stack: '../icons/icons.svg',
-				example: true
+				stack: {
+				   sprite: '../icons.svg',
+               example: true
+            },
 			}
 		}))
 		.pipe(gulp.dest(path.build.img))

@@ -28,10 +28,6 @@ const transformImg = () => {
 		  })
 	  ))
      .pipe(gulp.dest(path.build.img))
-
-     .pipe(gulp.src(path.src.svg))
-     .pipe(gulp.dest(path.build.svgOriginal))
-
      .pipe(plugins.browserSync.stream())
 }
 
