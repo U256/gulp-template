@@ -20,7 +20,7 @@ import svgSprite from 'gulp-svg-sprite'
  * };
  */
 
-const  generateSvgSprites = () => {
+const generateSvgSprites = () => {
 	const { gulp, plugins, path } = app
 
    gulp
@@ -44,7 +44,7 @@ const  generateSvgSprites = () => {
             },
 			}
 		}))
-		.pipe(gulp.dest(path.build.img))
+		.pipe(gulp.dest(path.build.svg))
 }
 
 export default generateSvgSprites

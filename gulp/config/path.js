@@ -8,7 +8,8 @@ const pathList = {
    build: {
       js: `${buildFolder}/js/`,
       img: `${buildFolder}/img/`,
-      svgOriginal: `${buildFolder}/img/svgOriginal`,
+      svg: `${buildFolder}/svg/`,
+      svgOriginal: `${buildFolder}/svg/svgOriginal/`,
       css: `${buildFolder}/css/`,
       html: `${buildFolder}/`,
       files: `${buildFolder}/files/`,
