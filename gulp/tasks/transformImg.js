@@ -14,22 +14,22 @@ const transformImg = () => {
 			}))
 		)
       .pipe(plugins.newer(path.build.img))
-		.pipe(plugins.if(isBuild, webp()))
-		.pipe(plugins.if(isBuild, gulp.dest(path.build.img)))
-		.pipe(plugins.if(isBuild, gulp.src(path.src.img)))
-		.pipe(plugins.if(isBuild, plugins.newer(path.build.img)))
-		.pipe(plugins.if(
-			isBuild, 
-			imagemin({
-				progressive: true,
-				svgoPlugins: [{ removeViewBox: false }],
-				interlaced: true,
-				optimizationLevel: 3,
-			})
-		))
+	  .pipe(plugins.if(isBuild, webp()))
+	  .pipe(plugins.if(isBuild, gulp.dest(path.build.img)))
+	  .pipe(plugins.if(isBuild, gulp.src(path.src.img)))
+	  .pipe(plugins.if(isBuild, plugins.newer(path.build.img)))
+	  .pipe(plugins.if(
+		  isBuild,
+		  imagemin({
+			  progressive: true,
+			  svgoPlugins: [{ removeViewBox: false }],
+			  interlaced: true,
+			  optimizationLevel: 3,
+		  })
+	  ))
       .pipe(gulp.dest(path.build.img))
       // просто перемещаем svg в папку изображений
-		.pipe(gulp.src(path.src.svg)) 
+	  .pipe(gulp.src(path.src.svg))
       .pipe(gulp.dest(path.build.img))
 		///
       .pipe(plugins.browserSync.stream())

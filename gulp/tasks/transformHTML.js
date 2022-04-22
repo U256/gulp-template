@@ -1,6 +1,6 @@
 import fileInclude from 'gulp-file-include'
 import webpHtml from 'gulp-webp-html-nosvg'
-import vesionNumber from 'gulp-version-number'
+import versionNumber from 'gulp-version-number'
 
 const transformHTML = () => {
    const { gulp, path, plugins, isBuild } = app
@@ -21,7 +21,7 @@ const transformHTML = () => {
 			.pipe(plugins.if(isBuild, webpHtml()))
          .pipe(plugins.if(
 				isBuild,
-				vesionNumber({
+				versionNumber({
 					value: '%DT%',
 					append: {
 						key: '_v', 

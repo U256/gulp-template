@@ -30,7 +30,6 @@ const pathList = {
       html: `${srcFolder}/**/*.html`,
       files: `${srcFolder}/files/**/*.*`,
    },
-   clean: buildFolder,
    buildFolder,
    srcFolder,
    rootFolder,

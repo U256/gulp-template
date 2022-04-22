@@ -10,13 +10,14 @@ import transformJS from './gulp/tasks/transformJS.js'
 import transformImg from './gulp/tasks/transformImg.js'
 import copyFonts from './gulp/tasks/copyFonts.js'
 import makeSprites from './gulp/tasks/generateSvgSprites.js'
+import lintSrc from './gulp/tasks/lintSrc.js'
 
 global.app = {
 	isBuild: process.argv.includes('--build'),
 	isDev: !process.argv.includes('--build'),
-	path: pathList, 
+	path: pathList,
 	gulp,
-	plugins 
+	plugins
 }
 
 const { watch, series, parallel, task } = gulp
@@ -41,6 +42,7 @@ const mainTasks = series(
 )
 const dev = series(reset, mainTasks, parallel(watchChanges, broadcast))
 const build = series(reset, mainTasks)
+const lint = series(lintSrc)
 task('default', dev)
 
-export { makeSprites, dev, build }
+export { makeSprites, dev, build, lint }
